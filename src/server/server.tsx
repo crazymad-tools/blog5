@@ -6,7 +6,7 @@ import { mimes } from "./mimes";
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 
-import App from "../pages/index/index";
+import App from "../pages/App";
 import { StaticRouter } from "react-router-dom";
 
 (() => {
