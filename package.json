@@ -70,6 +70,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "build:server": "webpack --mode development --config webpack.server.config.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
@@ -103,7 +104,10 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "sass-loader": "^8.0.0"
+    "sass-loader": "^8.0.0",
+    "ts-loader": "^6.2.1",
+    "webpack-cli": "^3.3.10",
+    "webpack-node-externals": "^1.7.2"
   },
   "jest": {
     "roots": [
