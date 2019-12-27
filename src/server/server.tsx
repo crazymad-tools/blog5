@@ -54,7 +54,7 @@ import { StaticRouter } from "react-router-dom";
       }
     }
   );
-  let port = 8083;
+  let port = 8092;
   server.listen(port);
   server.on("listening", () => {
     console.log(`Server listening on ${port}`);
