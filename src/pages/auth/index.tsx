@@ -4,7 +4,7 @@ import './index.scss';
 import LoginPage from './login';
 
 interface Props {
-  
+
 }
 
 const AuthPage: React.FC<Props> = props => {

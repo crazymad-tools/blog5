@@ -21,7 +21,8 @@
     "jsx": "react",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "experimentalDecorators": true
   },
   "include": [
     "src"

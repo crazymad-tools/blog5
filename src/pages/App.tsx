@@ -5,6 +5,7 @@ import IndexPage from './index';
 import AuthPage from './auth';
 import LoginPage from './auth/login';
 import RegisterPage from './auth/register';
+import EditPage from './edit';
 
 interface Props {}
 
@@ -20,6 +21,7 @@ const App: React.FC<Props> = props => {
         <Route path="/auth" component={AuthPage} />
         <Route path="/auth/login" component={LoginPage} />
         <Route path="/auth/register" component={RegisterPage} />
+        <Route path="/edit" component={EditPage} />
       {/* </Router> */}
     </div>
   );

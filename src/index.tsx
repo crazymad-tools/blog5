@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './pages/App';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router';
 import * as serviceWorker from './serviceWorker';
+import history from './history';
+import './global.scss';
 
 ReactDOM.hydrate(
-  <Router>
+  <Router history={history}>
     <App />
   </Router>
   , document.getElementById('root'));
