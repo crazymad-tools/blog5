@@ -1,13 +1,13 @@
 import { createServer, IncomingMessage, ServerResponse } from "http";
 import { readFileSync } from "fs";
-import { resolve } from "path";
+import { resolve, join } from "path";
 import { mimes } from "./mimes";
 
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 
 import App from "../pages/App";
-import { StaticRouter } from "react-router-dom";
+import { StaticRouter } from "react-router";
 
 (() => {
   const basepath = resolve(__dirname);
@@ -16,7 +16,8 @@ import { StaticRouter } from "react-router-dom";
       try {
         let { url } = request;
         let pathname: string = url || "";
-        if (!url || url === "" || url === "#/" || url === "/") {
+        if (!url || url === "" || url === "/" || url.match(/^[^\.]+$/)) {
+
           pathname = "index.html";
           let data = readFileSync(pathname, "utf-8");
           response.writeHead(200, { "Content-Type": mimes["html"] });
@@ -24,8 +25,7 @@ import { StaticRouter } from "react-router-dom";
             data.replace(
               '<div id="root"></div>',
               `<div id="root">${ReactDOMServer.renderToString(
-                // React.createElement(App)
-                <StaticRouter location={request.url} context={{}}>
+                <StaticRouter context={{}} location={request.url} >
                   <App />
                 </StaticRouter>
               )}</div>`
@@ -40,6 +40,7 @@ import { StaticRouter } from "react-router-dom";
             ext && ext.length > 0 && mimes[ext[0]]
               ? mimes[ext[0]]
               : "text/plain";
+          // console.log(filename, ext, contentType);
 
           const data = readFileSync(filename);
 

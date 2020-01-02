@@ -1,4 +1,14 @@
-import { createBrowserHistory } from "history";
+import { createBrowserHistory, createMemoryHistory } from "history";
+let History: any = {
+  history: null
+};
 
-const history = createBrowserHistory();
-export default history;
+export default History;
+
+export function createHistory(url: string) {
+  let history = createBrowserHistory();
+  History.history = history;
+
+  return history;
+}
+

@@ -2,7 +2,6 @@
 /** @typedef {import('webpack').Configuration} WebpackConfig **/
 const nodeExternals = require('webpack-node-externals');
 
-
 /** @type WebpackConfig[] */
 const configs = [
   {
@@ -31,8 +30,17 @@ const configs = [
         {
           test: /\.scss$/,
           use: [
+            'isomorphic-style-loader',
             "css-loader", // 将 CSS 转化成 CommonJS 模块
             "sass-loader" // 将 Sass 编译成 CSS，默认使用 Node Sass
+            // {
+            //   loader: 'css-loader/locals',
+            //   options: {
+            //     modules: true,
+            //     localIdentName: '[name]__[local]--[hash.base64:5]'
+            //   }
+            // },
+            // 'sass-loader'
           ]
         }
       ],

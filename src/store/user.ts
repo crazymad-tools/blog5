@@ -1,6 +1,6 @@
 import { observable, action } from "mobx";
 import axios, { AxiosResponse } from "axios";
-import history from "../history";
+import History from "../history";
 
 export default class UserStore {
   @observable
@@ -14,7 +14,7 @@ export default class UserStore {
       .then((res: AxiosResponse) => {
         this.isLogin = true;
         if (res.status === 201) {
-          history.push("/");
+          History.history && History.history.push("/");
         }
       });
   }
@@ -24,7 +24,7 @@ export default class UserStore {
     axios.post("https://api.crazymad.top/api/auth/register/submit", payload).then((res: AxiosResponse) => {
     // axios.post("http://localhost:8089/api/auth/register/submit", payload).then((res: AxiosResponse) => {
       if (res.status === 201) {
-        history.push("/auth/login");
+        History.history && History.history.push("/auth/login");
       }
     });
   }

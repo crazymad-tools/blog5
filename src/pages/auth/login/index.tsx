@@ -18,7 +18,7 @@ const LoginPage: React.FC<Props> = props => {
   }
 
   return (
-    <div>
+    <div id="loginPage">
       <p><b>LOGIN</b></p>
       <div>
         <input placeholder="username" value={username} onChange={e => setUsername(e.currentTarget.value)} />

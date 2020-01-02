@@ -10,10 +10,10 @@ const IndexPage: React.FC<Props> = props => {
   
   return (
     <div>
-      首页
-      <button onClick={e => props.history.push('/auth/login')}>登录</button>
-      <button onClick={e => props.history.push('/auth/register')}>注册</button>
-      {userStore.isLogin ? <span>已登录</span> : <span>未登录</span>}
+      index page
+      <button onClick={e => props.history.push('/auth/login')}>Login</button>
+      <button onClick={e => props.history.push('/auth/register')}>Register</button>
+      {userStore.isLogin ? <span>has login</span> : <span>haven't login</span>}
     </div>
   )
 }
