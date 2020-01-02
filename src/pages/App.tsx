@@ -6,23 +6,19 @@ import AuthPage from './auth';
 import LoginPage from './auth/login';
 import RegisterPage from './auth/register';
 import EditPage from './edit';
+import Page404 from './404';
 
-interface Props {}
+interface Props { }
 
 const App: React.FC<Props> = props => {
-  // const location = useLocation();
-  // const history = useHistory();
-  // const match = useRouteMatch();
-
   return (
     <div className="App">
-      {/* <Router> */}
-        <Route path="/" component={IndexPage} exact />
-        <Route path="/auth" component={AuthPage} />
-        <Route path="/auth/login" component={LoginPage} />
-        <Route path="/auth/register" component={RegisterPage} />
-        <Route path="/edit" component={EditPage} />
-      {/* </Router> */}
+      <Route path="/" component={IndexPage} exact />
+      <Route path="/auth" component={AuthPage} />
+      <Route path="/auth/login" component={LoginPage} />
+      <Route path="/auth/register" component={RegisterPage} />
+      <Route path="/edit" component={EditPage} />
+      <Route nomatch path="/404" component={Page404} />
     </div>
   );
 }

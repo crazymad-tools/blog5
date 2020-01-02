@@ -19,15 +19,17 @@ const LoginPage: React.FC<Props> = props => {
 
   return (
     <div id="loginPage">
-      <p><b>LOGIN</b></p>
-      <div>
-        <input placeholder="username" value={username} onChange={e => setUsername(e.currentTarget.value)} />
-      </div>
-      <div>
-        <input placeholder="password" value={password} onChange={e => setPassword(e.currentTarget.value)} type="password" />
-      </div>
-      <div>
-        <input type="submit" value="submit" onClick={login} />
+      <div className="auth-form">
+        <p><b>LOGIN</b></p>
+        <div className="auth-form-row">
+          <input placeholder="username" value={username} onChange={e => setUsername(e.currentTarget.value)} />
+        </div>
+        <div className="auth-form-row">
+          <input placeholder="password" value={password} onChange={e => setPassword(e.currentTarget.value)} type="password" />
+        </div>
+        <div className="auth-form-row">
+          <input type="submit" value="submit" onClick={login} />
+        </div>
       </div>
     </div>
   )

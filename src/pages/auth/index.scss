@@ -1,0 +1,25 @@
+@keyframes auth-form-move-in {
+  from {
+    transform: rotateX(60deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+.auth-form {
+  // animation: auth-form-move-in 1s;
+  // transform-origin: top center;
+  transform: rotateX(30deg);
+  box-shadow: 0 0 5px gray;
+  width: max-content;
+  padding: 10px;
+  perspective: 800px;
+  .auth-form {
+    height: 32px;
+  }
+  input {
+    width: 200px;
+    box-sizing: border-box;
+  }
+}
