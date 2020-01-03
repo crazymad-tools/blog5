@@ -47,7 +47,7 @@ const LoginPage: React.FC<Props> = props => {
           />
         </div>
         <div className="auth-form-row">
-          <input type="submit" value="submit" onClick={login} />
+          <button onClick={login} data-text="submit" />
         </div>
         <div className="auth-form-row">
           <Link to="/auth/register">to register</Link>
