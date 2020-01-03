@@ -1,4 +1,4 @@
-const mimes: {[key: string]: string} = {
+const mimes: { [key: string]: string } = {
   acc: "audio/acc",
   abw: "application/x-abiword",
   arc: "application/x-freearc",

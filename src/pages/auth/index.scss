@@ -1,25 +1,49 @@
-@keyframes auth-form-move-in {
+@keyframes form-move-in {
   from {
-    transform: rotateX(60deg);
+    transform: scale(0.3) perspective(3000px) rotateX(90deg);
   }
   to {
-    transform: rotateX(0deg);
+    transform: scale(1) perspective(600px) rotateX(0deg);
   }
 }
 
+#loginPage, #registerPage {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .auth-form {
-  // animation: auth-form-move-in 1s;
-  // transform-origin: top center;
-  transform: rotateX(30deg);
+  animation: form-move-in 1s;
   box-shadow: 0 0 5px gray;
   width: max-content;
   padding: 10px;
-  perspective: 800px;
-  .auth-form {
-    height: 32px;
+  transform-origin: top center;
+  border-radius: 5px;
+  .auth-form-row {
+    height: 36px;
   }
   input {
     width: 200px;
     box-sizing: border-box;
+    padding: 0 8px;
+    height: 24px;
+    &[type=submit] {
+      // background-color: #1890ff;
+      background-image: linear-gradient(90deg, #1890ff, #18dcff);
+      border: none;
+      color: white;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+  a {
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s;
+    &:hover {
+      color: #1890ff;
+    }
   }
 }
