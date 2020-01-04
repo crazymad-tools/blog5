@@ -16,6 +16,7 @@ const IndexPage: React.FC<Props> = props => {
       <button onClick={e => props.history.push("/auth/register")}>
         Register
       </button>
+      
       {userStore.isLogin ? <span>has login</span> : <span>haven't login</span>}
       <Earth />
     </div>
