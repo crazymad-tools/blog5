@@ -13,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: black;
 }
 
 .auth-form {
@@ -22,6 +23,7 @@
   padding: 10px;
   transform-origin: top center;
   border-radius: 5px;
+  background: white;
   .auth-form-row {
     height: 36px;
   }
