@@ -1,5 +1,48 @@
+@keyframes launch {
+  from {
+    transform: scale(0.5) translate(-100px, 100px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+}
+
 #indexPage {
   height: 100%;
   width: 100%;
   background: rgb(34, 34, 34);
+  .earth-container {
+    position: fixed;
+    left: calc((100% - 1350px) / 2);
+    top: calc((100% - 150px) / 2);
+  }
+  .article-list-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+  }
+  .article-rocket {
+    position: relative;
+    width: 750px;
+    height: 60px;
+    margin: 20px 0;
+    // background: #e5e5e5;
+    // border-top-right-radius: 30px;
+    // border-bottom-right-radius: 30px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    transform-origin: left center;
+    transform: scale(0) translate(-100%, 100px);
+  }
+  @for $i from 1 through 10 {
+    .article-rocket:nth-child(#{$i}) {
+      animation: launch 0.3s ease-out;
+      animation-delay: #{$i * 0.3}s;
+      animation-fill-mode: forwards;
+    }
+  }
 }

@@ -5,7 +5,7 @@ interface Props {}
 
 const Earth: React.FC<Props> = props => {
   return (
-    <a href="http://earth.crazymad.top" target="blank">
+    <a className="earth-link" href="http://earth.crazymad.top" target="blank">
       <div className="earth-globe">
         <img src="/earth.jpg" />
         <img src="/earth.jpg" />

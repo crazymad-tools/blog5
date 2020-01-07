@@ -11,14 +11,27 @@ const IndexPage: React.FC<Props> = props => {
 
   return (
     <div id="indexPage">
-      index page
+      {/* index page
       <button onClick={e => props.history.push("/auth/login")}>Login</button>
       <button onClick={e => props.history.push("/auth/register")}>
         Register
       </button>
       
-      {userStore.isLogin ? <span>has login</span> : <span>haven't login</span>}
-      <Earth />
+      {userStore.isLogin ? <span>has login</span> : <span>haven't login</span>} */}
+      <div className="earth-container">
+        <Earth />
+      </div>
+      <div className="article-list-container">
+        <div className="article-rocket">
+          <span>HELLO WORLD</span>
+        </div>
+        <div className="article-rocket" />
+        <div className="article-rocket" />
+        <div className="article-rocket" />
+        <div className="article-rocket" />
+        <div className="article-rocket" />
+        <div className="article-rocket" />
+      </div>
     </div>
   );
 };
