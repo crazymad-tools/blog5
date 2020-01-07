@@ -1,8 +1,8 @@
 @keyframes form-move-in {
-  from {
+  0% {
     transform: scale(0.3) perspective(3000px) rotateX(90deg);
   }
-  to {
+  100% {
     transform: scale(1) perspective(600px) rotateX(0deg);
   }
 }
@@ -16,7 +16,7 @@
 }
 
 .auth-form {
-  animation: form-move-in 0.75s;
+  animation: form-move-in 1s;
   box-shadow: 0 0 5px gray;
   width: max-content;
   padding: 10px;
@@ -25,12 +25,19 @@
   .auth-form-row {
     height: 36px;
   }
+  p {
+    color: #ff5918;
+  }
   input,
   button {
     width: 200px;
     box-sizing: border-box;
     padding: 0 8px;
     height: 24px;
+    border-radius: 2px;
+  }
+  input {
+    border: 1px solid #bababa;
   }
   button {
     display: block;
