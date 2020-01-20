@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import "./index.scss";
 import TextEditor from "../components/TextEditor";
 // import Preview from "./Preview";
@@ -6,7 +6,7 @@ import TextEditor from "../components/TextEditor";
 // import("./Preview").then((template) => {
 //   Preview = template;
 // });
-const Preview = React.lazy(() => import('./Preview'));
+const Preview = React.lazy(() => import("./Preview"));
 
 interface Props {}
 
@@ -36,7 +36,11 @@ const EditPage: React.FC<Props> = props => {
             onChange={(e: any) => setContent(e.currentTarget.value)}
           />
         </div>
-        {preview && <Preview content={content} />}
+        {preview && (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Preview content={content} />
+          </Suspense>
+        )}
       </div>
     </div>
   );
