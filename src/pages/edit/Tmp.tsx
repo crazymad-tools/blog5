@@ -1,11 +1,12 @@
 import React from "react";
+import { Loading } from "../components/common";
 
-interface Props {
-  content: string;
-}
+interface Props {}
 
 const Tmp: React.FC<Props> = props => {
-  return <div>hello</div>;
+  return <div className="markdown-review">
+    <Loading />
+  </div>;
 };
 
 export default Tmp;

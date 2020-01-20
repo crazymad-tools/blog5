@@ -1,6 +1,7 @@
 import React, { useState, Suspense } from "react";
 import "./index.scss";
 import TextEditor from "../components/TextEditor";
+import Tmp from './Tmp';
 // import Preview from "./Preview";
 // import Preview from './Tmp';
 // import("./Preview").then((template) => {
@@ -37,7 +38,7 @@ const EditPage: React.FC<Props> = props => {
           />
         </div>
         {preview && (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Tmp />}>
             <Preview content={content} />
           </Suspense>
         )}

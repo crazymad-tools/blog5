@@ -1,0 +1,2 @@
+exports.ids=[1],exports.modules={30:function(e,n,t){"use strict";t.r(n);var r=t(0),a=t.n(r),i=t(28),l=t.n(i),s=t(29),o=t.n(s);l.a.setOptions({highlight:function(e,n){return o.a.highlightAuto(e,[n]).value},langPrefix:"hljs lang-"});n.default=function(e){return a.a.createElement("div",{className:"markdown-review",dangerouslySetInnerHTML:{__html:l()(e.content)}})}}};
+//# sourceMappingURL=1.js.map
