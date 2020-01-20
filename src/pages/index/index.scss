@@ -38,6 +38,11 @@
     transform-origin: left center;
     transform: scale(0) translate(-100%, 100px);
   }
+  .article {
+    width: 600px;
+    height: 300px;
+    background: white;
+  }
   @for $i from 1 through 10 {
     .article-rocket:nth-child(#{$i}) {
       animation: launch 0.3s ease-out;

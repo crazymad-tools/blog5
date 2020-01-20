@@ -22,15 +22,15 @@ const IndexPage: React.FC<Props> = props => {
         <Earth />
       </div>
       <div className="article-list-container">
-        <div className="article-rocket">
+        {/* <div className="article-rocket">
           <span>HELLO WORLD</span>
         </div>
         <div className="article-rocket" />
         <div className="article-rocket" />
         <div className="article-rocket" />
         <div className="article-rocket" />
-        <div className="article-rocket" />
-        <div className="article-rocket" />
+        <div className="article-rocket" /> */}
+        <div className="article" />
       </div>
     </div>
   );

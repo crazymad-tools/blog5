@@ -2,11 +2,6 @@ import React, { useState, Suspense } from "react";
 import "./index.scss";
 import TextEditor from "../components/TextEditor";
 import Tmp from './Tmp';
-// import Preview from "./Preview";
-// import Preview from './Tmp';
-// import("./Preview").then((template) => {
-//   Preview = template;
-// });
 const Preview = React.lazy(() => import("./Preview"));
 
 interface Props {}
