@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
-import './index.scss';
-import TextEditor from '../components/TextEditor';
+import React, { useState } from "react";
+import "./index.scss";
+import TextEditor from "../components/TextEditor";
+// import Preview from "./Preview";
+// import Preview from './Tmp';
+// import("./Preview").then((template) => {
+//   Preview = template;
+// });
+const Preview = React.lazy(() => import('./Preview'));
 
-interface Props {
-
-}
+interface Props {}
 
 const EditPage: React.FC<Props> = props => {
   const [preview, setPreview] = useState<boolean>(false);
+  const [content, setContent] = useState("");
 
   return (
     <div id="editPage">
@@ -17,7 +22,7 @@ const EditPage: React.FC<Props> = props => {
         </div>
         <div className="tools">
           <span
-            className={`iconfont blog-icon-yulan ${preview ? 'active' : ''}`}
+            className={`iconfont blog-icon-yulan ${preview ? "active" : ""}`}
             onClick={e => setPreview(!preview)}
           />
           <span className="iconfont blog-icon-publish" />
@@ -27,15 +32,14 @@ const EditPage: React.FC<Props> = props => {
       </div>
       <div className="editor-container">
         <div className="editor-input">
-          <TextEditor />
+          <TextEditor
+            onChange={(e: any) => setContent(e.currentTarget.value)}
+          />
         </div>
-        {
-          preview && <div className="markdown-review">preview page</div>
-        }
+        {preview && <Preview content={content} />}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default EditPage;
-
