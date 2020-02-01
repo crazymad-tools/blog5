@@ -1,4 +1,4 @@
-@import url("//at.alicdn.com/t/font_1593658_javqkkxlwsr.css");
+@import url("//at.alicdn.com/t/font_1593658_0irzhdk41dob.css");
 
 html,
 body {
@@ -9,4 +9,55 @@ body {
 #root,
 .App {
   height: 100%;
+}
+
+@keyframes notice-move-in {
+  from {
+    margin-top: -30px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes notice-move-out {
+  from {
+    margin-top: 0px;
+    opacity: 1;
+  } 
+  to {
+    margin-top: -30px;
+    opacity: 0;
+  }
+}
+
+#globalNoticeContainer {
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  .global-notice {
+    position: relative;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    width: max-content;
+    padding: 8px 12px;
+    box-shadow: 0 0 6px #aaa;
+    border-radius: 5px;
+    color: #666;
+    background-color: white;
+    animation: notice-move-in 300ms;
+    transition: all 0.3s;
+    &.before-remove {
+      animation: notice-move-out 300ms;
+    }
+    &.success {
+      // background: lightgreen;
+      .iconfont {
+        color: rgb(99, 211, 99);
+        margin-right: 5px;
+      }
+    }
+  }
 }

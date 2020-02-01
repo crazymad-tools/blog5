@@ -7,11 +7,11 @@ interface RequestOptions {
   auth: boolean;
 }
 
-function success (res) {
-
+function success(res: any) {
+  console.log(res);
 }
 
-function fail ({response}: any) {
+function fail({ response }: any) {
   if (response) {
     // TODO
     console.log(response.data);
@@ -20,7 +20,7 @@ function fail ({response}: any) {
   }
 }
 
-export function request() {}
+export function request() { }
 
 export function post(
   url: string,
@@ -30,7 +30,13 @@ export function post(
     autoSuccess: true,
     auth: true
   }
-) {}
+) {
+  return axios.post(url, data).then((res) => {
+
+  }).catch(e => {
+
+  });
+}
 
 export function get(
   url: string,
@@ -42,7 +48,7 @@ export function get(
 ) {
   return axios.get(url, {
     headers: {
-      
+
     }
   }).then(() => {
 
