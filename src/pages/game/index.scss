@@ -1,0 +1,60 @@
+.game-page {
+  .map-editor {
+    border-left: 1px solid gray;
+    border-top: 1px solid gray;
+    width: max-content;
+    height: max-content;
+    user-select: none;
+  }
+  .row {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .col {
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+  }
+  .game-brush {
+    display: flex;
+    margin-top: 10px;
+    .game-brush-item {
+      margin: 0 10px;
+      height: 24px;
+      line-height: 24px;
+      padding: 3px 5px;
+      border-radius: 3px;
+      cursor: pointer;
+      &.active {
+        background: #efefef;
+      }
+      span {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  .game-draw-type {
+    margin-top: 10px;
+    display: flex;
+    .game-draw-type-item {
+      margin: 0 10px;
+      cursor: pointer;
+      height: 24px;
+      line-height: 24px;
+      padding: 3px 5px;
+      border-radius: 3px;
+      &.active {
+        background: #efefef;
+      }
+    }
+  }
+  .game-draw-area {
+    position: fixed;
+    border: 1px solid red;
+    pointer-events: none;
+  }
+}
