@@ -1,32 +1,44 @@
 import { observable, action } from "mobx";
 import axios, { AxiosResponse } from "axios";
+import { LOGIN, REGISTER } from "../http/api";
 import History from "../history";
 
 export default class UserStore {
   @observable
   isLogin: boolean = false;
-    
-  @action.bound
-  login(payload: { username: string; password: string }) {
-    axios
-      .post("https://api.crazymad.top/api/auth/login/submit", payload)
-      // .post("http://localhost:8089/api/auth/login/submit", payload)
-      .then((res: AxiosResponse) => {
-        this.isLogin = true;
-        if (res.status === 201) {
-          History.history && History.history.push("/");
-        }
-      });
-  }
 
   @action.bound
-  register(payload: { username: string, email: string, password: string }) {
-    axios.post("https://api.crazymad.top/api/auth/register/submit", payload).then((res: AxiosResponse) => {
-    // axios.post("http://localhost:8089/api/auth/register/submit", payload).then((res: AxiosResponse) => {
+  login(payload: { username: string; password: string }) {
+    axios.post(LOGIN, payload).then((res: AxiosResponse) => {
+      this.isLogin = true;
       if (res.status === 201) {
-        History.history && History.history.push("/auth/login");
+        History.history && History.history.push("/");
+      } else {
+        // alert(res.data);
+        console.log(res.data);
+      }
+    }).catch(e => {
+      // console.log(e.response);
+      // if (e.response.data && e.res.response.message) {
+      //   console.log(e.response.data.message);
+      // }
+      if (e.response && e.response.data && e.response.data.message) {
+        console.log(e.response.data.message);
       }
     });
   }
 
+  @action.bound
+  register(payload: { username: string; email: string; password: string }) {
+    axios.post(REGISTER, payload).then((res: AxiosResponse) => {
+      if (res.status === 201) {
+        History.history && History.history.push("/auth/login");
+      } else {
+        // alert(res.statusText);
+        alert(res.data);
+      }
+    }).catch(e => {
+      console.log(e);
+    });
+  }
 }

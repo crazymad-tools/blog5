@@ -8,5 +8,5 @@ const Tmp: React.FC<Props> = props => {
     <Loading />
   </div>;
 };
-
+  
 export default Tmp;
